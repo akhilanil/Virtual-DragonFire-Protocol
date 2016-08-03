@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="614.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.main.MainController">
+   <children>
+      <SplitPane dividerPositions="0.7" layoutY="-2.0" orientation="VERTICAL" prefHeight="540.0" prefWidth="614.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="126.0" prefWidth="612.0">
+               <children>
+                  <SplitPane dividerPositions="0.5" layoutY="5.0" prefHeight="377.0" prefWidth="612.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="353.0" prefWidth="287.0" />
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="201.0" prefWidth="612.0" />
+        </items>
+      </SplitPane>
+      <Button layoutX="559.0" layoutY="587.0" mnemonicParsing="false" onAction="#sendPacket" text="Send" />
+      <TextField fx:id="dataField" layoutX="8.0" layoutY="584.0" prefWidth="543.0" />
+      <RadioButton fx:id="ping" layoutX="17.0" layoutY="546.0" mnemonicParsing="false" onAction="#selectPacketType" text="Ping Packet">
+         <toggleGroup>
+            <ToggleGroup fx:id="PacketType" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="data" layoutX="120.0" layoutY="547.0" mnemonicParsing="false" onAction="#selectPacketType" text="Data Packet" toggleGroup="$PacketType" />
+      <ComboBox fx:id="destbox" disable="true" layoutX="288.0" layoutY="545.0" prefWidth="150.0" promptText="Destination" />
+   </children>
+</AnchorPane>
